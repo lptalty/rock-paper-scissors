@@ -47,13 +47,25 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
-    for(let i = 0; i<5; i++){
-        console.log(playRound(playerInput(), computerPlay()))
+    let playerScore = 0;
+    let computerScore = 0;
+        for(let i = 0; i<5; i++){
+        let result = playRound(playerInput(), computerPlay());
+        console.log(result);
+            if(result.includes('win')){
+                playerScore++;
+            } else if(result.includes('lose')){
+                computerScore++;
+            }
+        }   
+    if(playerScore === computerScore){
+        return 'The result of the game is a tie!'
+    } else if(playerScore > computerScore){
+        return 'You win the game!'
+    } else {
+        return 'You lose the game! '
     }
-
-    
 }
-
 
 console.log(game());
 
