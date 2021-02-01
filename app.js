@@ -11,12 +11,13 @@ function computerPlay(){
     return computerChoice;
 }
 
+function playerInput(){
+    let playChoice = prompt('Rock, Paper, or Scissors?');
+    return playChoice.toLowerCase(); 
+   }
+
 function playRound(computerSelection, playerSelection){
-    if( typeof playerSelection != 'string'){
-        return 'Please put in Rock, Paper, or Scissors'
-    } else{
-        let playerChoice = playerSelection.toLowerCase();
-            if(computerSelection === 'Rock'){
+    if(computerSelection === 'Rock'){
                 if(playerSelection === 'rock'){
                     return 'Tie!'
                 } else if(playerSelection === 'paper'){
@@ -40,12 +41,19 @@ function playRound(computerSelection, playerSelection){
                 } else{
                     return 'Tie!'
                 }
+             } else {
+                 return 'Please write rock, paper, or scissors'
              }
-    }
 }
 
-const playerSelection = 'Scissors';
-const computerSelection = computerPlay();
+function game(){
+    for(let i = 0; i<5; i++){
+        console.log(playRound(computerPlay(), playerInput()))
+    }
 
-console.log(playRound(computerSelection, playerSelection))
+    
+}
+
+
+console.log(game());
 
