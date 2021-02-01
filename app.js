@@ -2,11 +2,11 @@ function computerPlay(){
     //randomly return rock, paper, or scissors
     let computerChoice = Math.floor(Math.random() * Math.floor(3));
     if(computerChoice === 0){
-        computerChoice = 'Rock'
+        computerChoice = 'rock'
     }else if(computerChoice === 1){
-        computerChoice = 'Paper'
+        computerChoice = 'paper'
     }else{
-        computerChoice = 'Scissors'
+        computerChoice = 'scissors'
     }
     return computerChoice;
 }
@@ -16,28 +16,28 @@ function playerInput(){
     return playChoice.toLowerCase(); 
    }
 
-function playRound(computerSelection, playerSelection){
-    if(computerSelection === 'Rock'){
-                if(playerSelection === 'rock'){
+function playRound(playerSelection, computerSelection){
+            if(playerSelection === 'rock'){
+                if(computerSelection === 'rock'){
                     return 'Tie!'
-                } else if(playerSelection === 'paper'){
-                    return 'You win! Paper covers rock!'
-                } else{
-                    return 'You lose! Rock beats Scissors!'
-                }
-             } else if(computerSelection === 'Paper'){
-                 if(playerSelection === 'rock'){
+                } else if(computerSelection === 'paper'){
                     return 'You lose! Paper covers rock!'
-                } else if(playerSelection === 'paper'){
+                } else{
+                    return 'You win! Rock smashes scissors!'
+                }
+             } else if(playerSelection === 'paper'){
+                 if(computerSelection === 'rock'){
+                    return 'You win! Paper covers rock!'
+                } else if(computerSelection === 'paper'){
                     return 'Tie!'
                 } else{
-                    return 'You win! Scissors cuts paper!'
-                }
-             } else if(computerSelection === 'Scissors'){
-                 if(playerSelection === 'rock'){
-                    return 'You win! Rock smashes scissors!'
-                } else if(playerSelection === 'paper'){
                     return 'You lose! Scissors cuts paper!'
+                }
+             } else if(playerSelection === 'scissors'){
+                 if(computerSelection === 'rock'){
+                    return 'You lose! Rock smashes scissors!'
+                } else if(computerSelection === 'paper'){
+                    return 'You win! Scissors cuts paper!'
                 } else{
                     return 'Tie!'
                 }
@@ -48,7 +48,7 @@ function playRound(computerSelection, playerSelection){
 
 function game(){
     for(let i = 0; i<5; i++){
-        console.log(playRound(computerPlay(), playerInput()))
+        console.log(playRound(playerInput(), computerPlay()))
     }
 
     
