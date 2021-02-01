@@ -1,2 +1,2 @@
 # rock-paper-scissors
-This is my first project using Javascript. 
+This is my first project using Javascript. Although the program alerts the user for an input, the results of the indivual matches and the overall game is all visible only through the terminal. A few times I noticed that I would leave the end of an if/else if chain as a simple 'else' which often left me with strange results. I learned that it would better to be more explicit with my outcomes and from that process helped me to better understand any logic errors I was making. 
