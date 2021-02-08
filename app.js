@@ -1,3 +1,17 @@
+function alertFunction(){
+    alert('working');
+}
+
+const buttons = document.querySelectorAll('button')
+buttons.forEach((button) => {
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', alertFunction); 
+});
+
+
+
+
+
 function computerPlay(){
     //randomly return rock, paper, or scissors
     let computerChoice = Math.floor(Math.random() * Math.floor(3));
@@ -49,7 +63,7 @@ function playRound(playerSelection, computerSelection){
 function game(){
     let playerScore = 0;
     let computerScore = 0;
-        for(let i = 0; i<5; i++){
+        for(let i = 0; i<1; i++){
         let result = playRound(playerInput(), computerPlay());
         console.log(result);
             if(result.includes('win')){
