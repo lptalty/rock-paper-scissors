@@ -1,16 +1,24 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="style.css">
-        <script src="app.js" defer></script>
     </head>
     <h1 class="header">
-        Rock-Paper-Scissors Javascript Project
+        Rock, Paper, or Scissors?
     </h1>
     <body>
-        <div class = instructions>
-            <button id="btn">Rock</button>
-            <button id="btn">Paper</button>
-            <button id="btn">Scissors</button>
+        <div class = "scoreBoard">
+            <div id = 'user-label' class = 'badge'>User</div>
+            <div id = 'computer-label' class = 'badge'>Computer</div>
+            <span id = 'user-score'>0</span>:<span id = 'computer-score'>0</span>
         </div>
+
+        <div class = "choices">
+            <button id="btn-rock">Rock</button>
+            <button id="btn-paper">Paper</button>
+            <button id="btn-scissors">Scissors</button>
+        </div>
+
+        <div id = "result"></div>
+        <script src="app.js" defer></script>
     </body>
 </html>
